@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Criar' }} Serviço</h4>
-                <p class="card-title-desc">Administrar serviços</p>
+                <p class="card-title-desc">Criar ou editar Serviços</p>
                 <form action="{{ isset($data) ? route('servicos.update', $data->id) : route('servicos.store') }}" method="POST">
                     @csrf
                     @if (isset($data))

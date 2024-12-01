@@ -1,25 +1,29 @@
 @extends('layout.main')
-@section('title', 'Clientes')
+@section('title', 'Fornecedores')
 @section('content')
     
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Criar' }} Clientes</h4>
-                <p class="card-title-desc">Administrar cliente</p>
-                <form action="{{ isset($data) ? route('clientes.update', $data->id) : route('clientes.store') }}" method="POST">
+                <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Cadastrar' }} fornecedores</h4>
+                <p class="card-title-desc">Criar ou editar Fornecedores</p>
+                <form action="{{ isset($data) ? route('fornecedores.update', $data->id) : route('fornecedores.store') }}" method="POST">
                     @csrf
                     @if (isset($data))
                         @method('PUT')
                     @endif
                     <div class="row">
                         <div class="col-md-8">
-                            <label class="col-form-label">Nome completo</label>
-                            <input class="form-control" name="name" id="name" value="{{ $data->name ?? '' }}"  type="text" placeholder="Ex: João da Silva">
+                            <label class="col-form-label">Razão Social</label>
+                            <input class="form-control" name="name" id="name" value="{{ $data->name ?? '' }}"  type="text" placeholder="Ex: José Maria">
+                        </div>
+                        <div class="col-md-8">
+                            <label class="col-form-label">Nome Fantasia</label>
+                            <input class="form-control" name="namef" id="namef" value="{{ $data->namef ?? '' }}"  type="text" placeholder="Ex: Empresa top">
                         </div>
                         <div class="col-md-4">
-                            <label class="col-form-label">CPF</label>
-                            <input class="form-control" name="cpf" id="cpf" value="{{ $data->cpf ?? '' }}" oninput="mascaraCPF(this)" maxlength="14" name="cpf" id="cpf" type="text" placeholder="Ex: 000.000.000-00">
+                            <label class="col-form-label">CNPJ</label>
+                            <input class="form-control" name="cnpj" id="cnpj" value="{{ $data->cnpj ?? '' }}" type="text" placeholder="Ex: 00.000.000/0000-00" title="Digite um CNPJ no formato 00.000.000/0000-00">
                         </div>
                         <div class="col-md-2">
                             <label class="col-form-label">Cep</label>
@@ -48,7 +52,7 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
-                            <button class="btn btn-primary" type="submit">{{ isset($data) ? 'Atualizar' : 'Criar' }}</button>
+                            <button class="btn btn-primary" type="submit">{{ isset($data) ? 'Atualizar' : 'Cadastrar' }}</button>
                         </div>
                     </div>
                 </form>

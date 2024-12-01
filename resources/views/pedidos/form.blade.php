@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">{{ isset($order) ? 'Atualizar' : 'Criar' }} Pedido</h4>
-                <p class="card-title-desc">Administrar pedidos</p>
+                <p class="card-title-desc">Criar ou editar Pedidos</p>
                 <form action="{{ isset($order) ? route('pedidos.update', $order->id) : route('pedidos.store') }}" method="POST">
                     @csrf
                     @if (isset($order))

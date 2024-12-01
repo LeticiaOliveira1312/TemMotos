@@ -862,6 +862,17 @@ body[data-sidebar="colored"].vertical-collpsed
   i {
   color: #556ee6 !important;
 }
+.report-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 20px 40px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
 .topnav {
   background: var(--bs-topnav-bg);
   padding: 0 calc(24px * 0.5);
@@ -1892,6 +1903,8 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
   z-index: 1;
   display: block;
 }
+
+
 [dir="rtl"] .modal-open {
   padding-left: 0 !important;
 }

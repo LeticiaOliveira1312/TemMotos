@@ -5,14 +5,14 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Peças cadastradas</h4>
+                <h4 class="card-title">Lista de Produtos</h4>
                 <p class="card-title-desc">Visualizar e editar informações</p>
 
                 <div class="row mb-2">
                     <div class="col-sm-8">
                         <div class="text-sm-right">
                             <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light mb-2 mr-2" onclick="window.location='{{ route('pecas.create') }}'">
-                                <i class="mdi mdi-plus mr-1"></i> Nova Peça
+                                <i class="mdi mdi-plus mr-1"></i> Novo Produto
                             </button>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>Preço de compra</th>
+                                <th>Preço de custo</th>
                                 <th>Preço de venda</th>
                                 <th>Quantidade</th>
                                 <th>Descrição</th>

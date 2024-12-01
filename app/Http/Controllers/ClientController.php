@@ -38,6 +38,8 @@ class ClientController extends Controller
             'address' => 'nullable|string|max:255',
             'number' => 'nullable|string|max:10',
             'neighborhood' => 'nullable|string|max:255',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
         ]));
 
         return redirect()->route('clientes.index');
@@ -56,6 +58,8 @@ class ClientController extends Controller
             'address' => 'nullable|string|max:255',
             'number' => 'nullable|string|max:10',
             'neighborhood' => 'nullable|string|max:255',
+            'city' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
         ]));
 
         return redirect()->route('clientes.index')->with('success', 'Atualizado com sucesso!');

@@ -5,8 +5,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Criar' }} Clientes</h4>
-                <p class="card-title-desc">Administrar cliente</p>
+                <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Cadastrar' }} Clientes</h4>
+                <p class="card-title-desc">Cadastrar ou atualizar Cliente</p>
                 <form action="{{ isset($data) ? route('clientes.update', $data->id) : route('clientes.store') }}" method="POST">
                     @csrf
                     @if (isset($data))
@@ -36,6 +36,15 @@
                         <div class="col-md-4">
                             <label class="col-form-label">Bairro</label>
                             <input class="form-control" name="neighborhood" id="neighborhood" value="{{ $data->neighborhood ?? '' }}" type="text" placeholder="Ex: Centro">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-form-label" for="city">Cidade</label>
+                            <input class="form-control" name="city" id="city" value="{{ $data->city ?? '' }}" type="text" placeholder="Digite o nome da cidade">
+                        </div>
+
+                        <div class="col-md-4">
+                             <label class="col-form-label" for="state">Estado</label>
+                             <input class="form-control" name="state" id="state" value="{{ $data->state ?? '' }}" type="text" placeholder="Digite o estado">
                         </div>
                         <div class="col-md-8">
                             <label class="col-form-label">E-mail</label>

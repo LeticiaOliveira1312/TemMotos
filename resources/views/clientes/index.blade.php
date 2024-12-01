@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Lista de Clientes</h4>
-                <p class="card-title-desc">visualizar informações</p>
+                <p class="card-title-desc">Visualizar e editar informações</p>
 
                 <div class="row mb-2">
                     <div class="col-sm-8">
@@ -37,7 +37,7 @@
                                     <td>{{ $cliente->cpf }}</td>
                                     <td>{{ $cliente->phone }}</td>
                                     <td>{{ $cliente->email }}</td>
-                                    <td>{{ $cliente->address }}, {{ $cliente->number }} - {{ $cliente->neighborhood }} - {{ $cliente->zipCode }}</td>
+                                    <td>{{ $cliente->address }}, {{ $cliente->number }} - {{ $cliente->neighborhood }} - {{ $cliente->zipCode }} </td>
                                     <td style="width: 100px">
                                         <a class="btn btn-outline-secondary btn-sm" title="Edit" href="{{ route('clientes.edit', $cliente->id) }}">
                                             <i class="fas fa-pencil-alt"></i>

@@ -5,8 +5,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Criar' }} Peças</h4>
-                <p class="card-title-desc">Administrar peças</p>
+                <h4 class="card-title">{{ isset($data) ? 'Atualizar' : 'Cadastrar' }} Produto</h4>
+                <p class="card-title-desc">Criar ou atualizar Produtos</p>
                 <form action="{{ isset($data) ? route('pecas.update', $data->id) : route('pecas.store') }}" method="POST">
                     @csrf
                     @if (isset($data))
@@ -24,7 +24,7 @@
                         @endif
                         <div class="col-md-6">
                             <label class="col-form-label">Nome</label>
-                            <input class="form-control" name="name" id="name" value="{{ $data->name ?? '' }}" type="text" placeholder="Ex: Parafuso">
+                            <input class="form-control" name="name" id="name" value="{{ $data->name ?? '' }}" type="text" placeholder="Ex: Pistão">
                         </div>
                         <div class="col-md-6">
                             <label class="col-form-label">Código</label>
@@ -39,7 +39,11 @@
                             <input class="form-control" name="sellingPrice" id="sellingPrice" value="{{ $data->sellingPrice ?? '' }}" type="number" step="0.01" placeholder="Ex: 15.75">
                         </div>
                         <div class="col-md-6">
-                            <label class="col-form-label">Estoque</label>
+                            <label class="col-form-label">Quantidade</label>
+                            <input class="form-control" name="stock" id="stock" value="{{ $data->stock ?? '' }}" type="number" placeholder="Ex: 100">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-form-label">Estoque mínimo</label>
                             <input class="form-control" name="stock" id="stock" value="{{ $data->stock ?? '' }}" type="number" placeholder="Ex: 100">
                         </div>
                         <div class="col-md-6">
@@ -53,14 +57,14 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <label class="col-form-label">Descrição</label>
                             <textarea class="form-control" name="description" id="description" rows="3" placeholder="Ex: Peça utilizada para...">{{ $data->description ?? '' }}</textarea>
                         </div>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
-                            <button class="btn btn-primary" type="submit">{{ isset($data) ? 'Atualizar' : 'Criar' }} Peça</button>
+                            <button class="btn btn-primary" type="submit">{{ isset($data) ? 'Atualizar' : 'Cadastrar' }} Produto</button>
                         </div>
                     </div>
                 </form>

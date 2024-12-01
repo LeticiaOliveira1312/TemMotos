@@ -7,6 +7,8 @@ use App\Http\Controllers\PartController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RelatorioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +28,14 @@ Route::post('login', [AuthController::class, 'login'])->name('login.post');
 Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [AuthController::class, 'register'])->name('register.post');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/relatorios/index', [RelatorioController::class, 'geral'])->name('relatorios.index');
+
 
 
 Route::middleware('auth')->group(function () 
-{
-    Route::get('/dashboard', function () {
-        return view('home.index');
-    })->name('dashboard');
-    
+{    
+
     Route::resource('clientes', ClientController::class);
     Route::resource('pecas', PartController::class);
     Route::resource('fornecedores', SupplierController::class);
@@ -43,4 +45,5 @@ Route::middleware('auth')->group(function ()
     Route::get('/relatorios', function () {
         return view('relatorios.index');
     })->name('relatorios.index');
+    
 });

@@ -56,7 +56,7 @@
                                     <img src="{{asset('images/logo-branca.png')}}" alt="" height="15">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{{asset('images/logo-branca.png')}}" alt="" height="50">
+                                    <img src="{{asset('images/logo-branca.png')}}" alt="" height="60">
                                 </span>
                             </a>
                         </div>
@@ -89,25 +89,32 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled ps-2 pe-2" id="side-menu">
-                            <li class="menu-title text-white text-center">Menu</li>
+                          <li class="menu-title text-white text-center">Início</li>
                             <li>
                                 <button class="btn btn-azul">
                                     <a href="{{ route('clientes.index') }}" class="text-white">
-                                        <span>Cadastro de Clientes</span>
+                                        <span>Cadastar Clientes</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
                                     <a href="{{ route('pecas.index') }}" class="text-white">
-                                        <span>Cadastro de Peças</span>
+                                        <span>Cadastrar Produtos</span>
                                     </a>
                                 </button>  
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
                                     <a href="{{ route('servicos.index') }}" class="text-white">
-                                        <span>Cadastro de Serviços</span>
+                                        <span>Cadastrar Serviços</span>
+                                    </a>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-azul waves-effect">
+                                    <a href="{{ route('fornecedores.index') }}" class="text-white">
+                                        <span>Cadastrar Fornecedores</span>
                                     </a>
                                 </button>
                             </li>
@@ -125,6 +132,30 @@
                                     </a>
                                 </button>
                             </li>
+                            <li>
+                            <button class="btn btn-azul waves-effect">
+                                <a href="#" class="text-white" onclick="showMessageAndGoBack()">
+                                    <span>Usuários</span>
+                                </a>
+                            </button>
+                            <script>
+                                function showMessageAndGoBack() {
+                                    // Exibe a mensagem de alerta
+                                    alert('Em construção, aguarde...');
+                                    
+                                    // Após o alerta, redireciona para a tela inicial do dashboard
+                                    window.location.href = "{{ route('dashboard') }}"; // Ajuste para a sua rota do dashboard
+                                }
+                            </script>
+
+                            </li>
+                            
+                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                  @csrf 
+                                <button class="btn btn-primary waves-effect waves-light"> 
+                                    <span>Sair</span>
+                                 </button>
+                            </form>
                         </ul>
                     </div>
 
